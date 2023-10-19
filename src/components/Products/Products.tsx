@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./product.css";
 
 const PRODUCT_API_URL = "https://dummyjson.com/products";
 
@@ -13,7 +14,7 @@ type Product = {
 
 export const Products = () => {
   const [products, setProducts] = useState<Product[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
 
   const fetchData = async (url: string) => {
@@ -43,14 +44,21 @@ export const Products = () => {
 
   return (
     <>
-      {products.map((product) => (
-        <div className={""} key={product.id}>
-          <img src={product.thumbnail} alt={product.title} />
-          <h3>{product.title}</h3>
-
-          <button>Add to Cart</button>
-        </div>
-      ))}
+      {isLoading ? (
+        <h3 className={""}>Loading...</h3>
+      ) : (
+        products.map((product) => (
+          <div className={"item-container"} key={product.id}>
+            <img
+              className="image-container"
+              src={product.thumbnail}
+              alt={product.title}
+            />
+            <h3 className={""}>{product.title}</h3>
+            <button>Add to Cart</button>
+          </div>
+        ))
+      )}
     </>
   );
 };
