@@ -1,12 +1,17 @@
-import React from 'react';
-import './App.css';
-import { Greet } from './components/Greet';
+import "./App.css";
+import { Products } from "./components/Products/Products";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Header } from "./components/Header/Header";
 
 function App() {
   return (
-    <div className="App">
-     <Greet name='Kritika' messageCount={10} />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Header />}>
+        </Route>
+        <Route path="products" element={<Products />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
