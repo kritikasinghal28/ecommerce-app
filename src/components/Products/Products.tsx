@@ -54,8 +54,10 @@ export const Products = () => {
               src={product.thumbnail}
               alt={product.title}
             />
-            <h3 className={""}>{product.title}</h3>
-            <button>Add to Cart</button>
+            <div className="details">
+              <h3 className={""}>{product.title}</h3>
+              <button>Add to Cart</button>
+            </div>
           </div>
         ))
       )}
