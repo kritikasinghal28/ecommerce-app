@@ -1,6 +1,12 @@
+import { FormEventHandler } from "react";
 import "./search.css";
 
-export const Search = (props: any) => {
+type SearchProps = {
+  searchText: string | number;
+  handleFilter: FormEventHandler;
+};
+
+export const Search = (props: SearchProps) => {
   const { handleFilter } = props;
   return (
     <>

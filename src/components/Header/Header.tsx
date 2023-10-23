@@ -10,7 +10,7 @@ export const Header = () => {
         <img src={ShopIcon} alt="shop" className="shop-icon"></img>
         <h1>Shoppify</h1>
       </div>
-      <Search /> 
+      {/* <Search />  */}
       <div className="list-container">
         <Link to="/">
           <h3>Home</h3>

@@ -22,7 +22,9 @@ export const Products = () => {
       const dataResponse = await fetch(url);
       if (dataResponse.ok) {
         const data = await dataResponse.json();
-        setProducts(data.products);
+        if (data) {
+          setProducts(data.products);
+        }
         setIsLoading(false);
       } else {
         setError(true);
